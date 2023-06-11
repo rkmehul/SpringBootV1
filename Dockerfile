@@ -1,3 +1,5 @@
-FROM  jenkins/jenkins 
+FROM openjdk:8-jdk
+EXPOSE 8080
 USER root
-RUN apt-get update && apt-get install -y maven
+COPY ./target/demo-0.0.1-SNAPSHOT.jar /home/root/app.jar 
+ENTRYPOINT ["java","-jar","./app.jar"]
