@@ -1,16 +1,12 @@
 pipeline { 
     agent any  
     stages { 
-        stage('Build') { 
+        stage('Build & Deploy to Nexus') { 
             steps { 
-              sh 'mvn -s settings.xml -DskipTests clean install'
+              sh 'mvn -s settings.xml -DskipTests clean install deploy'
             }
         }
-         stage('Deploy') { 
-            steps { 
-              sh 'mvn -s settings.xml deploy'
-            }
-        }
+         
        
     }
 }
