@@ -10,6 +10,7 @@ pipeline {
             steps {
                 script {
                     sh "mvn -X -s settings.xml -DskipTests clean install deploy -Dbuild.number=${MAVEN_BUILD_NUMBER}"
+                    sh "systemctl start docker"
                 }
             }
         }
