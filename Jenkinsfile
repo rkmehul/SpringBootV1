@@ -15,10 +15,12 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
+                    container('docker') {
                 script {
                     // Build your Docker image with the build argument
                     sh 'docker build --build-arg BUILD_NUMBER=${BUILD_NUMBER} -t expense-tracker:latest .'
                 }
+                    }          
             }
         }
     }
