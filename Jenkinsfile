@@ -18,7 +18,7 @@ pipeline {
                     
                 script {
                     // Build your Docker image with the build argument
-                    sh 'buildah --build-arg BUILD_NUMBER=${BUILD_NUMBER} -t expense-tracker:latest .'
+                    sh 'buildah --build-arg BUILD_NUMBER=${BUILD_NUMBER} -t expense-tracker:latest'
                     sh 'sleep 300'
                 }
                             
