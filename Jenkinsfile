@@ -13,7 +13,7 @@ pipeline {
                 }
             }
         }
-        stage('Docker Build') {
+        /*stage('Docker Build') {
             steps {
                     
                 script {
@@ -23,6 +23,6 @@ pipeline {
                 }
                             
             }
-        }
+        }*/
     }
 }
